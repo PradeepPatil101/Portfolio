@@ -4,8 +4,6 @@ This is a portfolio of some projects that I worked on as a student.
 # Object Oriented Design and Development - CSC 517
 Ruby, Ruby on Rails, Rails API, Docker, RSpec
 
-• Developed the join team requests controller for an open source project Expertiza
-
 • Created a Ruby on Rails project simulating a railway ticketing system
 
 # Software Engineering - CSC 510
@@ -29,6 +27,8 @@ Java, Oracle DB, JDBC
 
 • Worked with team to design the database with an E/R diagram and then implement the system
 
-• Link to E/R Diagram: 
+• Link to E/R Diagram: https://github.com/PradeepPatil101/Portfolio/blob/main/Database%20Management%20Systems%20-%20CSC%20540/Design/ER.pdf
 
+# Medilog
 
+• The first ever web application I created to learn web development and get in to the CSC program at NCSU
