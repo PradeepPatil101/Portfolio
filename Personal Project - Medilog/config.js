@@ -2,7 +2,7 @@
 require('dotenv').config();
 const env = process.env.NODE_ENV; // 'dev' or 'test'
 const dev = {
-    clientId: `810339610172-u2u8120j9i6qg8g83mq5mm988tus2q2p.apps.googleusercontent.com`,
+    clientId: ``,
     secret: `Sbz9jjRx8AOPLnLqZiBszsfg`,
     callback: `http://localhost:3000/callback`,
     server: 'http://localhost:3000',
@@ -16,7 +16,7 @@ const dev = {
     }
 };
 const prod = {
-    clientId: `178725023775-r6ud4u7s81i0vl341anl01nhuuf7gold.apps.googleusercontent.com`,
+    clientId: ``,
     secret: `QbbBkMN2kROaHTFjGepyWoOS`,
     callback: `https://codershop.in/callback`,
     adminemail: 'admin@login.com',

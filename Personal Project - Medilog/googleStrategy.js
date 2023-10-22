@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
         clientSecret: config.secret,
         callbackURL: config.callback,
         accessType: "offline",
-        userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+        userProfileURL: "",
     },
     (accessToken, refreshToken, profile, cb) => {
         userProfile = profile;
