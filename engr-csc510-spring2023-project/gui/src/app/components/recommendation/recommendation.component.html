@@ -1,0 +1,86 @@
+<div class="movie-container bg-primary">
+    <div *ngIf="statusCode == 200 || statusCode == 206" class="success">
+        <div class="poster-container">
+            <img src="{{currentMoviePosterPath}}" id="movie-poster" class="rounded img-thumbnail">
+        </div>
+    
+        <div class="movie-details-container">
+            <h2 id="movie-title">{{currentRecMovie.title}}</h2>
+            <hr>
+    
+            <div class="general-info">
+                <p>MPAA rating: <b class="text-warning">{{currentRecMovie.mpaa_rating}}</b></p>
+                <div class="vertical-line"></div>
+                <p>Year released: <b class="text-warning">{{currentRecMovie.release_year}}</b></p>
+                <div class="vertical-line"></div>
+                <p>Genre(s): <b class="text-warning">{{currentRecMovie.genre}}</b></p>
+                <hr>
+            </div>
+    
+            <div class="cast-and-crew-info">
+                <p>Director(s): <b class="text-warning">{{currentRecMovie.director}}</b></p>
+                <div class="vertical-line"></div>
+                <p>Top actors: 
+                    <b *ngIf="currentRecMovie.actor1 != 'NA'" class="text-warning">{{currentRecMovie.actor1}}</b>
+                    <b *ngIf="currentRecMovie.actor2 != 'NA'" class="text-warning">, {{currentRecMovie.actor2}}</b>
+                    <b *ngIf="currentRecMovie.actor3 != 'NA'"class="text-warning">, {{currentRecMovie.actor3}}</b>
+                </p>
+                <hr>
+            </div>
+    
+            <div class="rating-info"> 
+                <div class="imdb">
+                    <img src="../../../assets/imdb-logo.png" alt="imdb logo" id="imdb-logo" href="https://www.imdb.com/title/tt5108870/" class="logo">
+                    <p id="rating">Rated <b>{{currentRecMovie.imdb_rating}}</b> stars</p>
+                </div>
+    
+                <hr>
+    
+                <div class="rotten-tomatoes">
+                    <img src="../../../assets/rotten-tomatoes-logo.png" alt="rotten tomatoes logo" id="rotten-tomatoes-logo" class="logo">
+                    <p id="rating">Rated <b>{{currentRecMovie.critics_score}}%</b> by critics</p>
+                </div>
+                <hr>
+            </div>
+    
+            <div class="reroll">
+                <button *ngIf="currentRecIdx < recommendations.length - 1" (click)="showNextRecommendation()" class="btn btn-success">
+                    Want a different recommendation?
+    
+                    <!-- Bootstrap icon -->
+                    <svg id="refresh-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                    </svg>
+                </button>
+                <button *ngIf="currentRecIdx >= recommendations.length - 1" (click)="redirectToHomepage()" class="btn btn-success">
+                    Back to home
+                </button>
+            </div>
+
+            <div *ngIf="statusCode == 206" class="partial-movies-found request-error-warning">
+                <div class="alert alert-dismissible alert-warning">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <h4 class="alert-heading">Heads up</h4>
+                    <p class="mb-0">We had to widen the specified year range to find movies matching your criteria.</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="statusCode == 204" class="no-movies-found request-error-warning">
+        <div class="alert alert-dismissible alert-warning">
+            <h4 class="alert-heading">Uh-oh...</h4>
+            <p class="mb-0">It looks like no movies could be found matching your criteria within 50 years of the specified range.</p>
+            <button (click)="redirectToHomepage()" class="btn btn-success">Try again?</button>
+          </div>
+    </div>
+
+    <div *ngIf="statusCode != 200 && statusCode != 204 && statusCode != 206" class="server-error request-error-warning">
+        <div class="alert alert-dismissible alert-warning">
+            <h4 class="alert-heading">Our bad...</h4>
+            <p class="mb-0">It looks like there's a problem with our server. Please try again at another time.</p>
+            <button (click)="redirectToHomepage()" class="btn btn-success">Try again?</button>
+          </div>
+    </div>
+</div>

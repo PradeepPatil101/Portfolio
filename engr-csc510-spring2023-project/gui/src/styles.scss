@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootswatch/dist/Darkly/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/dist/Darkly/bootswatch";
+
+/* Animation to make elements fade in gradually */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

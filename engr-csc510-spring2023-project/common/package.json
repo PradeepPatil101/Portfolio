@@ -1,0 +1,22 @@
+{
+  "name": "common",
+  "version": "0.0.1",
+  "description": "common files to both client and server",
+  "scripts": {"test": "jest"},
+  "author": "Paulo Borba and Marcelo d'Amorim",
+  "license": "MIT",    
+  "dependencies": {
+    "tslib": "^2.5.0",
+    "import-cwd": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

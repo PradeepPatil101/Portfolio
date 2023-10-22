@@ -1,0 +1,117 @@
+<body class="bg-primary">
+    <h1>Add or update a movie</h1>
+    <hr>
+
+    <div class="form-container">
+        <form id="movie-update-form" [formGroup]="movieUpdateForm">
+            <div class="col col-1">
+                <div class="form-group">
+                    <label for="movie-title-input">Movie title</label>
+                    <input type="text" class="form-control" id="movie-title-input" formControlName="title">
+                </div>
+                <div class="form-group">
+                  <label for="genre-input">Genre</label>
+                  <input type="text" class="form-control" id="genre-input" formControlName="genre">
+              </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Top 3 Actors/Actresses</label>
+                  <input type="text" class="form-control" id="actor-1-input" formControlName="actor1">
+                  <input type="text" class="form-control" id="actor-2-input" formControlName="actor2">
+                  <input type="text" class="form-control" id="actor-3-input" formControlName="actor3">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">IMDB Rating</label>
+                  <input min="0" max="10" type="number" id="imdb-rating" class="form-control" formControlName="imdb_rating" placeholder="1 - 10"/>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Rotten Tomatoes Rating</label>
+                  <input min="0" max="100" type="number" id="rotten-tomatoes-rating" class="form-control" formControlName="critics_score" placeholder="1 - 100"/>
+                </div>
+            </div>
+            <div class="col col-2">
+                <div class="form-group">
+                    <label for="movie-title-input">Director name</label>
+                    <input type="text" class="form-control" name = "movie-director-input" id="movie-director-input" formControlName="director">
+                  </div>
+                  <div class="form-group">
+                    <label for="year-released-input">Year released</label>
+                    <input min="1750" max="2023" type="number" id="year-released-input" class="form-control" formControlName="release_year"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="runtime-input">Runtime <div style="display: inline; margin-left: 3px;" class="text-muted">(minutes)</div></label>
+                    <input min="1" max="1000" type="number" id="runtime-input" class="form-control" formControlName="runtime"/>
+                  </div>
+                  <div class="form-group mpaa-inputs">
+                    <label>MPAA Rating</label>
+                    <hr>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="unrated-mpaa-input" value="unrated" checked formControlName="mpaa_rating">
+                        <label class="form-check-label" for="unrated-mpaa-input">
+                          Unrated
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="g-mpaa-input" value="G" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="g-mpaa-input">
+                          G
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="pg-mpaa-input" value="PG" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="pg-mpaa-input">
+                          PG
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="pg-13-mpaa-input" value="PG-13" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="pg-13-mpaa-input">
+                          PG-13
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="nc-17-mpaa-input" value="NC-17" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="nc-17-mpaa-input">
+                          NC-17
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mpaa_rating" id="r-mpaa-input" value="R" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="r-mpaa-input">
+                          R
+                        </label>
+                      </div>
+                  </div>
+            </div>
+          </form>
+    </div>
+    <div class="clear-float"></div>
+    <button class="btn btn-info" id = "submit-form" (click)="onSubmit()">Submit</button>
+
+    <div *ngIf="updateFailed === true && infoIsCorrect === false" class="request-error-warning update-failure incorrect-info">
+      <div class="alert alert-dismissible alert-warning">
+          <h4 class="alert-heading">Oh no!</h4>
+          <p class="mb-0">It looks like there's a problem with your input. Please check it and try again.</p>
+        </div>
+    </div>
+
+    <div *ngIf="updateFailed === true && infoIsCorrect === true" class="request-error-warning update-failure server-error">
+      <div class="alert alert-dismissible alert-danger">
+          <h4 class="alert-heading">Our bad...</h4>
+          <p class="mb-0">It looks like there's a problem with our server. Please try again at another time.</p>
+        </div>
+    </div>
+
+    <div *ngIf="updateSucceeded === true" class="request-success">
+      <div class="alert alert-dismissible alert-success">
+          <h4 class="alert-heading">Success!</h4>
+          <p class="mb-0">Thanks for the info - we'll take it from here.</p>
+        </div>
+    </div>
+
+    <!-- Spinner to be shown while the request is being made -->
+    <div id="loading" *ngIf="loading === true">
+      <div class="spinner-border text-success" role="status">
+          <span class="sr-only"></span>
+      </div>
+  </div>
+</body>

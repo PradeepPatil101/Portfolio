@@ -1,0 +1,113 @@
+p {
+    font-size: 20px;
+    display: inline;
+}
+
+a {
+    font-size: 20px;
+}
+
+.imdb, .rotten-tomatoes {
+    display: block
+}
+
+.imdb {
+    width: 40%;
+}
+
+.logo {
+    margin-right: 15px;
+}
+
+.reroll {
+    width: 100%;
+    margin: auto;
+}
+
+.reroll button {
+    font-size: 25px;
+    margin: auto;
+    display: block;
+}
+
+.rotten-tomatoes {
+    width: 60%;
+}
+
+.poster-container {
+    width: 35% !important;
+}
+
+.poster-container, .movie-details-container {
+    float: left;
+    padding: 15px;
+}
+
+.movie-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    animation: fadeIn 2s;
+    overflow: hidden;
+}
+
+.movie-details-container {
+    width: 65%;
+    padding-top: 30px;
+    margin-top: 40px;
+}
+
+.request-error-warning {
+    width: 50%;
+    margin: 30px auto 30px auto;
+    text-align: center;
+}
+
+.no-movies-found button {
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+    width: 250px;
+    font-size: 25px;
+}
+
+.server-error button {
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+    width: 250px;
+    font-size: 25px;
+}
+
+.vertical-line {
+    border-right: 3px solid white;
+    margin: 0 10px 0 10px;
+    display: inline;
+    height: 100%;
+}
+
+#movie-title {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+#imdb-logo {
+    width: 70px;
+    height: 40px;
+}
+
+#reroll-img {
+    width: 40px;
+    height: 40px;
+}
+
+#rotten-tomatoes-logo, #trailer-icon {
+    width: 70px;
+    height: 70px;
+}
+
+#refresh-icon {
+    margin-left: 5px;
+}

@@ -1,0 +1,162 @@
+<body>
+    <h2 *ngIf="formPage >= 0 && formPage <= 4">Pick a movie for me please!</h2>
+    <div class="prompt" *ngIf="formPage == 0">
+        <p>Having trouble picking a movie?</p>
+        <p>Answer a few short questions and we'll pick one for you from our database of hundreds!</p>
+        <button type="button" (click)="showNextFormPage()" class="btn btn-success" name = "Start now!">Start now!</button>
+    </div>
+
+    <form *ngIf="formPage >= 1 && formPage <= 4" [formGroup]="movieRecForm" class="questionnaire-container bg-primary">
+
+        <!-- Page 1 of the form -->
+        <div *ngIf="formPage == 1" class="questionnaire">
+            <div class="prompt">
+                <h3 id="prompt-header">What is the occasion?</h3>
+                <hr>
+            </div>
+            <div class="checked-inputs" >
+                <div class="form-check">
+                    <input name = "date-night" class="form-check-input" type="radio" name="occasion" id="radioButton1" value="Date Night" formControlName="occasion" checked>
+                    <label class="form-check-label" for="radioButton1">
+                        Date night
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="occasion" id="radioButton2" value="Family Movie Night" formControlName="occasion">
+                    <label class="form-check-label" for="radioButton2">
+                        Family movie night
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="occasion" id="radioButton3" value="Movie With Friends" formControlName="occasion">
+                    <label class="form-check-label" for="radioButton3">
+                        Movie with friends
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="occasion" id="radioButton4" value="Bored and Alone" formControlName="occasion">
+                    <label class="form-check-label" for="radioButton4">
+                        Bored and alone
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="occasion" id="radioButton5" value="other" formControlName="occasion" checked>
+                    <label class="form-check-label" for="radioButton5">
+                        Other
+                    </label>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" (click)="showLastFormPage()" class="btn btn-warning btn-prev">Back</button>
+                <button type="button" (click)="showNextFormPage()" [hidden]="!movieRecForm.value.occasion" class="btn btn-success btn-next" name = "Next1">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 2 of the form -->
+        <div *ngIf="formPage == 2" class="questionnaire">
+            <div class="emotion-select">
+                <div class="prompt">
+                    <h3 id="prompt-header">How are you today?</h3>
+                    <hr>
+                </div>
+                <input class="emotion-select-input" type="radio" name="emotion" id="happy-image" value="Happy" formControlName="emotion">
+                <label class="emotion-select-label" for="happy-image">Happy <img src="../../../assets/happy.png" alt="happy"></label>
+
+                <input class="emotion-select-input" type="radio" name="emotion" id="neutral-image" value="Neutral" formControlName="emotion" checked>
+                <label class="emotion-select-label" for="neutral-image">Neutral <img src="../../../assets/neutral.png" alt="neutral"></label>
+
+                <input class="emotion-select-input" type="radio" name="emotion" id="sad-image" value="Sad" formControlName="emotion">
+                <label class="emotion-select-label" for="sad-image">Sad <img src="../../../assets/sad.png" alt="sad"></label>
+            </div>
+            <div class="btn-group">
+                <button type="button" (click)="showLastFormPage()" class="btn btn-warning btn-prev">Back</button>
+                <button type="button" (click)="showNextFormPage()" *ngIf="movieRecForm.value.emotion" class="btn btn-success btn-next" name ="Next2">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 3 of the form -->
+        <div *ngIf="formPage == 3" class="questionnaire">
+            <div class="movie-age">
+                <div class="prompt">
+                    <h3 id="prompt-header">How old would you like the movie to be?</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="movie-age-input">
+                <label for="start_release_year">From</label>
+                <input type="number" id="start_release_year" formControlName="start_release_year">
+
+                <label for="last_release_year">To</label>
+                <input type="number" id="last_release_year" formControlName="last_release_year">
+
+                <p>If you have no preference, leave the input fields above blank.</p>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" (click)="showLastFormPage()" class="btn btn-warning btn-prev">Back</button>
+                <button type="button" (click)="showNextFormPage()" class="btn btn-success btn-next" name ="Next3">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 4 of the form -->
+        <div *ngIf="formPage == 4" class="questionnaire">
+            <div class="MPAA-rating">
+                <div class="prompt">
+                    <h3 id="prompt-header">Do you have a preference for the age-appropriateness of the movie?</h3>
+                    <hr>
+                </div>
+                <div class="checked-inputs">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="none" id="no-preference-check" name="mpaa_rating" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="no-preference-check">
+                          No preference
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="G" id="g-check" name="mpaa_rating" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="g-check">
+                            G
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="PG" id="pg-check" name="mpaa_rating" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="pg-check">
+                            PG
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="PG-13" id="pg-13-check" name="mpaa_rating" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="pg-13-check">
+                            PG-13
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="R" id="r-check" name="mpaa_rating" formControlName="mpaa_rating">
+                        <label class="form-check-label" for="r-check">
+                            R/NC-17
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" (click)="showLastFormPage()" class="btn btn-warning btn-prev">Back</button>
+                <button type="button" (click)="onSubmit()" *ngIf="movieRecForm.value.mpaa_rating" class="btn btn-success btn-submit" name = "Submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <!-- Temporary spinner to be shown after submission -->
+    <div id="loading" *ngIf="formPage > 4">
+        <h2 id="loading-text">Picking a really great movie...</h2>
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+</body>

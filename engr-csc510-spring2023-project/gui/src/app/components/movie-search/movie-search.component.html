@@ -1,0 +1,174 @@
+<body>
+    <div class="panel panel-1 bg-primary">
+        <div class="form-container">
+            <h1>Search for a movie</h1>
+            <hr>
+            <form id="movie-update-form" [formGroup]="movieSearchForm">
+                <div class="row row-1">
+                    <div class="form-group">
+                        <label for="movie-title-input">Movie title</label>
+                        <input type="text" class="form-control" id="movie-title-input" formControlName="title">
+                    </div>
+                    <div class="form-group">
+                      <label for="genre-input">Genre</label>
+                      <input type="text" class="form-control" id="genre-input" formControlName="genre">
+                  </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Actor 1</label>
+                      <input type="text" class="form-control" id="actor-1-input" formControlName="actor1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Actor 2</label>
+                        <input type="text" class="form-control" id="actor-2-input" formControlName="actor2">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Actor 3</label>
+                        <input type="text" class="form-control" id="actor-3-input" formControlName="actor3">
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">IMDB Rating (>=)</label>
+                      <input min="0" max="10" type="number" id="imdb-rating" class="form-control" formControlName="imdb_rating" placeholder="1 - 10"/>
+                    </div>
+                </div>
+    
+                <div class="row row-2">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Rotten Tomatoes (>=)</label>
+                        <input min="0" max="100" type="number" id="rotten-tomatoes-rating" class="form-control" formControlName="critics_score" placeholder="1 - 100"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="director-name">Director name</label>
+                        <input type="text" class="form-control" id="director-name" formControlName="director">
+                    </div>
+                    <div class="form-group">
+                        <label for="year-released-input">Release Year Range <div style="display: inline; margin-left: 3px;" class="text-muted">(inclusive)</div></label>
+                        <input min="1750" max="2023" type="number" id="year-released-input" class="form-control" formControlName="release_year_start" placeholder="From"/>
+                        <input min="1750" max="2023" type="number" id="year-released-input" class="form-control" formControlName="release_year_end" placeholder="To"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="runtime-input">Runtime <div style="display: inline; margin-left: 3px;" class="text-muted">(minutes)</div></label>
+                        <input min="1" max="1000" type="number" id="runtime-input" class="form-control" formControlName="runtime"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="mpaa-select">MPAA Rating</label>
+                        <select class="form-select" aria-label="MPAA Rating" id="mpaa-select" formControlName="mpaa_rating">
+                            <option value=""></option>
+                            <option value="G">G</option>
+                            <option value="PG">PG</option>
+                            <option value="PG-13">PG-13</option>
+                            <option value="NC-17">NC-17</option>
+                            <option value="R">R</option>
+                          </select>
+                    </div>
+                    <div class="approximation-checkboxes">
+                        <div class="approximation-label-container">
+                            <label id="approx-label">Approximate</label>
+                            <!-- <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="question-mark-icon bi bi-patch-question" viewBox="0 0 16 16">
+                                <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745z"/>
+                                <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
+                                <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
+                            </svg> -->
+                        </div>
+                        <div class="form-group checkboxes">
+                            <label class="form-check-label" for="runtime-approximate-input">
+                                <input class="form-check-input" type="checkbox" value="true" id="runtime-approximate-input" formControlName="approximate_runtime">
+                                Runtime
+                            </label>
+                        </div>
+                        <div class="form-group checkboxes">
+                            <label class="form-check-label" for="release-year-approximate-input">
+                                <input class="form-check-input" type="checkbox" value="true" id="runtime-approximate-input" formControlName="approximate_release_year">
+                                Release year
+                            </label>
+                        </div>
+                    </div>
+                </div>
+              </form>
+        </div>
+        <button class="btn btn-info" (click)="onSubmit()" id = "search-button">Search</button>
+    
+        <div *ngIf="updateFailed === true && infoIsCorrect === false" class="request-error-warning update-failure incorrect-info">
+          <div class="alert alert-dismissible alert-warning">
+              <h4 class="alert-heading">Oh no!</h4>
+              <p class="mb-0">It looks like there's a problem with your input. Please provide at least one field and try again.</p>
+            </div>
+        </div>
+    
+        <div *ngIf="updateFailed === true && infoIsCorrect === true" class="request-error-warning update-failure server-error">
+          <div class="alert alert-dismissible alert-danger">
+              <h4 class="alert-heading">Our bad...</h4>
+              <p class="mb-0">It looks like there's a problem with our server. Please try again at another time.</p>
+            </div>
+        </div>
+    
+        <div *ngIf="updateSucceeded === true && movies.length == 0" class="request-error-warning update-success empty-response">
+            <div class="alert alert-dismissible alert-warning">
+                <h4 class="alert-heading">No movies found</h4>
+                <p class="mb-0">It appears no movies could be found matching that criteria. Please modify your input and try again.</p>
+              </div>
+        </div>
+    </div>
+
+    <div class="panel panel-2" *ngIf="updateSucceeded == true && movies.length > 0">
+        <h3 id = "successHeading">Good news! It looks like the following movies match your criteria:</h3>
+        <p *ngIf="lastReqApproximateReleaseYear == true && lastReqApproximateRuntime == false">
+            (Within 10 years of your stated release year)
+        </p>
+
+        <p *ngIf="lastReqApproximateRuntime == true && lastReqApproximateReleaseYear == false">
+            (Within 20 minutes of your stated runtime)
+        </p>
+
+        <p *ngIf="lastReqApproximateReleaseYear == true && lastReqApproximateRuntime == true">
+            (Within 10 years of your stated release year and 20 minutes of your runtime)
+        </p>
+        <hr>
+        <div class="movies">
+            <div *ngFor="let movie of movies" class="movie-info bg-primary">
+                <!-- <h4>{{movie.title}} ({{movie.release_year}}) by {{movie.director}}</h4> -->
+                <h2 id="movie-title">{{movie.title}}</h2>
+            <hr>
+            <div class="general-info col col1">
+                <p>MPAA rating: <b class="text-warning">{{movie.mpaa_rating}}</b></p>
+                <p>Year released: <b class="text-warning">{{movie.release_year}}</b></p>
+                <p>Genre(s): <b class="text-warning">{{movie.genre}}</b></p>
+            </div>
+    
+            <div class="cast-and-crew-info col col2">
+                <p>Director(s): <b class="text-warning">{{movie.director}}</b></p>
+                <p>Top actors: 
+                    <b *ngIf="movie.actor1 != 'NA'" class="text-warning">{{movie.actor1}}</b>
+                    <b *ngIf="movie.actor2 != 'NA'" class="text-warning">, {{movie.actor2}}</b>
+                    <b *ngIf="movie.actor3 != 'NA'"class="text-warning">, {{movie.actor3}}</b>
+                </p>
+                <p>Runtime: <b class="text-warning">{{movie.runtime}}</b> minutes</p>
+            </div>
+    
+            <div class="rating-info col col3"> 
+                <div class="imdb">
+                    <img src="../../../assets/imdb-logo.png" alt="imdb logo" id="imdb-logo" href="https://www.imdb.com/title/tt5108870/" class="logo">
+                    <p id="rating">Rated <b>{{movie.imdb_rating}}</b> stars</p>
+                </div>
+                <div class="rotten-tomatoes">
+                    <img src="../../../assets/rotten-tomatoes-logo.png" alt="rotten tomatoes logo" id="rotten-tomatoes-logo" class="logo">
+                    <p id="rating">Rated <b>{{movie.critics_score}}%</b> by critics</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spinner to be shown while the request is being made -->
+    <div id="loading" *ngIf="loading === true">
+      <div class="spinner-border text-success" role="status">
+          <span class="sr-only"></span>
+      </div>
+    </div>
+</body>
+
+<!-- Used to initialize tooltips. Credit to https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp -->
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

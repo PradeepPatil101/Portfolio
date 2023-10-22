@@ -1,0 +1,143 @@
+body {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+input[type=number] {
+    width: 110px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn-group {
+    margin: auto;
+    width: 180px;
+}
+
+.btn-prev, .btn-next, .btn-submit {
+    max-width: 90px;
+    animation: fadeIn 2s;
+}
+
+/* Used to make input for radio buttons and checkboxes narrower so the space
+    between the radio button/checkbox and its label are reasonably-sized
+*/
+.checked-inputs {
+    width: 30%;
+    margin: auto; /* Center the container */
+}
+
+.prompt > p {
+    margin: 10px 0 0 0;
+}
+
+.questionnaire-container {
+    border-radius: 10px;
+    width: 75%;
+    margin: auto;
+    margin-top: 30px;
+    animation: fadeIn 2s;
+}
+
+.questionnaire {
+    margin: auto;
+    padding: 15px 0 15px 0;
+    width: 100%;
+    animation: fadeIn 3s;
+}
+
+.questionnaire hr {
+    width: 300px;
+    margin: 0 auto 15px auto;
+    border-top: 3px solid white;
+}
+
+.emotion-select {
+    margin: auto;
+}
+
+.emotion-select-label > img {
+    margin: 0 20px 0 20px;
+    height: 150px;
+    width: 150px;
+    padding: 3px;
+    display: block;
+}
+
+.emotion-select-label {
+    font-size: 20px;
+}
+
+.emotion-select-label:hover {
+    background: #2c4763;
+    border-radius: 10px;
+}
+
+/* Used to style the label associated with the invisible radio button */
+.emotion-select > input[type="radio"]:checked+label {
+    outline: 2px solid white;
+    background: #2c4763;
+    border-radius: 10px;
+}   
+
+.emotion-select-input {
+    opacity: 0;
+    pointer-events: none; /* Prevents accidental clicking of the invisible radio buttons */
+}
+
+.emotion-select-input:checked {
+    border: 1px solid white;
+}
+
+.movie-age-input {
+    width: 50%;
+    margin: auto;
+}
+
+.movie-age-input > input {
+    margin-right: 25px;
+    font-size: 25px;
+}
+
+.movie-age-input > label {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.movie-age-input > p {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.spinner-border {
+    width: 120px;
+    height: 120px;
+    margin-top: 30px;
+}
+
+#loading-text {
+    animation: fadeIn 4s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
