@@ -1,0 +1,259 @@
+Calculate Ours
+Hyperparameters:  {'bins': 6, 'better': 'bdom', 'Far': 0.77, 'min': 0.5, 'Max': 2600, 'p': 0.5, 'rest': 6.0}
+
+prec h h
+
+flex h h
+
+resl h h
+
+team vh vh
+
+pmat h h
+pmat l l
+pmat n n
+
+rely h h
+rely n n
+rely vh vh
+
+data h h
+data l l
+data n n
+data vh vh
+
+cplx h h
+cplx n n
+cplx vh vh
+cplx xh xh
+
+ruse n n
+
+docu n n
+
+time h h
+time n n
+time vh vh
+time xh xh
+
+stor h h
+stor n n
+stor vh vh
+stor xh xh
+
+pvol h h
+pvol l l
+pvol n n
+
+acap h h
+acap n n
+acap vh vh
+
+pcap h h
+pcap n n
+pcap vh vh
+
+pcon n n
+
+apex h h
+apex n n
+apex vh vh
+
+plex h h
+plex l l
+plex n n
+plex vl vl
+
+ltex h h
+ltex l l
+ltex n n
+ltex vl vl
+
+tool h h
+tool n n
+
+site n n
+
+sced l l
+sced n n
+{'pmat': ['l']}
+{'pmat': ['l'], 'stor': ['vh']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n'], 'rely': ['n'], 'tool': ['n'], 'time': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n', 'xh'], 'rely': ['n'], 'tool': ['n'], 'time': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n', 'xh'], 'rely': ['n', 'vh'], 'tool': ['n'], 'time': ['n']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n', 'xh'], 'rely': ['n', 'vh'], 'tool': ['n'], 'time': ['n', 'xh']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h', 'vl'], 'ltex': ['h'], 'apex': ['h'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n', 'xh'], 'rely': ['n', 'vh'], 'tool': ['n'], 'time': ['n', 'xh']}
+{'pmat': ['l'], 'stor': ['vh'], 'pcap': ['h'], 'data': ['l'], 'acap': ['h'], 'plex': ['h', 'vl'], 'ltex': ['h'], 'apex': ['h', 'vh'], 'sced': ['l'], 'pvol': ['l'], 'cplx': ['n', 'xh'], 'rely': ['n', 'vh'], 'tool': ['n'], 'time': ['n', 'xh']}
+Calculate Baseline
+Hyperparameters:  {'bins': 16, 'better': 'zitler', 'Far': 0.95, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 4}
+
+prec h h
+
+flex h h
+
+resl h h
+
+team vh vh
+
+pmat h h
+pmat l l
+pmat n n
+
+rely h h
+rely n n
+rely vh vh
+
+data h h
+data l l
+data n n
+
+cplx h h
+cplx vh vh
+cplx xh xh
+
+ruse n n
+
+docu n n
+
+time h h
+time n n
+time vh vh
+time xh xh
+
+stor h h
+stor n n
+stor vh vh
+stor xh xh
+
+pvol h h
+pvol l l
+pvol n n
+
+acap h h
+acap n n
+
+pcap h h
+pcap n n
+pcap vh vh
+
+pcon n n
+
+apex h h
+apex l l
+apex n n
+apex vh vh
+
+plex h h
+plex l l
+plex n n
+plex vl vl
+
+ltex h h
+ltex l l
+ltex n n
+ltex vl vl
+
+tool h h
+tool n n
+
+site n n
+
+sced l l
+sced n n
+{'acap': ['n']}
+{'acap': ['n'], 'data': ['l']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+{'acap': ['n'], 'data': ['l'], 'sced': ['l'], 'pcap': ['n'], 'pmat': ['h'], 'apex': ['n'], 'rely': ['h'], 'time': ['n'], 'stor': ['n'], 'plex': ['n'], 'cplx': ['h'], 'ltex': ['h'], 'pvol': ['l'], 'tool': ['n']}
+
+Mid
+Method, 	Kloc+, 	Effort-, 	Defects-, 	Months-
+all, 	48.5, 	278.0, 	2077.0, 	21.5
+sway1, 	9.7, 	36.0, 	302.0, 	11.0
+xpln1, 	14.0, 	60.0, 	437.0, 	12.4
+sway2, 	151.0, 	600.0, 	6136.0, 	26.2
+xpln2, 	151.0, 	600.0, 	6136.0, 	26.2
+top, 	5.5, 	18.0, 	172.0, 	9.1
+
+Div
+Method, 	Kloc+, 	Effort-, 	Defects-, 	Months-
+all, 	102.13, 	673.06, 	3200.39, 	10.23
+sway1, 	24.46, 	132.56, 	762.79, 	5.12
+xpln1, 	24.46, 	132.56, 	762.79, 	5.12
+sway2, 	366.67, 	1674.42, 	19149.61, 	31.09
+xpln2, 	366.67, 	1674.42, 	19149.61, 	31.09
+top, 	2.13, 	8.84, 	66.28, 	1.36
+
+Evals
+Method, 	 Count
+all, 	0
+sway1, 	5
+xpln1, 	5
+sway2, 	30
+xpln2, 	30
+top, 	93
+------------------
+Equals
+------------------
+Method, 	Kloc+, 	Effort-, 	Defects-, 	Months-
+all to sway1, 	 ! , 	 ! , 	 ! , 	 ! 
+all to xpln1, 	 ! , 	 ! , 	 ! , 	 ! 
+all to sway2, 	 = , 	 = , 	 = , 	 = 
+all to xpln2, 	 = , 	 = , 	 = , 	 = 
+all to top, 	 ! , 	 ! , 	 ! , 	 ! 
+sway1 to xpln1, 	 = , 	 = , 	 = , 	 = 
+sway1 to sway2, 	 = , 	 = , 	 = , 	 = 
+sway1 to xpln2, 	 = , 	 = , 	 = , 	 = 
+sway1 to top, 	 = , 	 = , 	 = , 	 = 
+xpln1 to sway2, 	 = , 	 = , 	 = , 	 = 
+xpln1 to xpln2, 	 = , 	 = , 	 = , 	 = 
+xpln1 to top, 	 = , 	 = , 	 = , 	 ! 
+sway2 to xpln2, 	 = , 	 = , 	 = , 	 = 
+sway2 to top, 	 = , 	 = , 	 = , 	 = 
+xpln2 to top, 	 = , 	 = , 	 = , 	 = 
+✅ pass:	 hpo
+#W ?k <class 'str'>
+#W ?v <class 'dict'>
+#W ?settings <class 'function'>
+#W ?cli <class 'function'>
+#W ?make_attempt <class 'function'>
+#W ?main <class 'function'>
+#W ?Seed <class 'int'>
+✅ Number of tests passing -> 1
+❌ Number of tests failing -> 0

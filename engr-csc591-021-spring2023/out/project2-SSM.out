@@ -1,0 +1,227 @@
+Calculate Ours
+Hyperparameters:  {'bins': 14, 'better': 'zitler', 'Far': 0.93, 'min': 0.5, 'Max': 2600, 'p': 1.0, 'rest': 4.0}
+
+f 0 0
+f 1 1
+
+sMOOTHER 1 1
+
+cOLORGS 0 0
+cOLORGS 1 1
+
+rELAXPARAMETER 0 0
+rELAXPARAMETER 1 1
+
+v 0 0
+v 1 1
+
+jACOBI 0 0
+jACOBI 1 1
+
+lINE 0 0
+lINE 1 1
+
+zEBRALINE 0 0
+zEBRALINE 1 1
+
+cYCLE 1 1
+
+ALPHA -inf 51
+ALPHA 51 55
+ALPHA 55 65
+ALPHA 65 70
+ALPHA 70 75
+ALPHA 75 80
+ALPHA 80 85
+ALPHA 85 inf
+
+BETA -inf 6
+BETA 6 10
+BETA 10 15
+BETA 15 25
+BETA 25 30
+BETA 30 35
+BETA 35 40
+BETA 40 45
+BETA 45 50
+BETA 50 55
+BETA 55 65
+BETA 65 inf
+
+PRESMOOTHING -inf 1
+PRESMOOTHING 1 2
+PRESMOOTHING 2 3
+PRESMOOTHING 3 4
+PRESMOOTHING 4 5
+PRESMOOTHING 5 6
+PRESMOOTHING 6 inf
+
+POSTSMOOTHING -inf 1
+POSTSMOOTHING 1 2
+POSTSMOOTHING 2 3
+POSTSMOOTHING 3 4
+POSTSMOOTHING 4 5
+POSTSMOOTHING 5 6
+POSTSMOOTHING 6 7
+POSTSMOOTHING 7 inf
+{'zEBRALINE': [1]}
+{'zEBRALINE': [1], 'f': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[85, inf]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[85, inf]], 'POSTSMOOTHING': [[3, 4]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[3, 4]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[3, 4]], 'PRESMOOTHING': [[2, 3]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[2, 4]], 'PRESMOOTHING': [[2, 3]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[2, 4]], 'PRESMOOTHING': [[2, 4]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[2, 4]], 'PRESMOOTHING': [[2, 4]], 'BETA': [[15, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[2, 4]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[15, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[80, inf]], 'POSTSMOOTHING': [[2, 5]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[15, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[75, inf]], 'POSTSMOOTHING': [[2, 5]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[15, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[75, inf]], 'POSTSMOOTHING': [[2, 5]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[10, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[75, inf]], 'POSTSMOOTHING': [[2, 5]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[6, 25]]}
+{'zEBRALINE': [1], 'f': [0], 'v': [1], 'rELAXPARAMETER': [0], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'ALPHA': [[75, inf]], 'POSTSMOOTHING': [[2, 5]], 'PRESMOOTHING': [[1, 4]], 'BETA': [[6, 30]]}
+Calculate Baseline
+Hyperparameters:  {'bins': 16, 'better': 'zitler', 'Far': 0.95, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 4}
+
+f 0 0
+f 1 1
+
+sMOOTHER 1 1
+
+cOLORGS 0 0
+cOLORGS 1 1
+
+rELAXPARAMETER 0 0
+rELAXPARAMETER 1 1
+
+v 0 0
+v 1 1
+
+jACOBI 0 0
+jACOBI 1 1
+
+lINE 0 0
+lINE 1 1
+
+zEBRALINE 0 0
+zEBRALINE 1 1
+
+cYCLE 1 1
+
+ALPHA -inf 6
+ALPHA 6 10
+ALPHA 10 15
+ALPHA 15 25
+ALPHA 25 30
+ALPHA 30 35
+ALPHA 35 40
+ALPHA 40 45
+ALPHA 45 50
+ALPHA 50 55
+ALPHA 55 65
+ALPHA 65 inf
+
+BETA -inf 51
+BETA 51 55
+BETA 55 65
+BETA 65 70
+BETA 70 75
+BETA 75 80
+BETA 80 85
+BETA 85 inf
+
+PRESMOOTHING -inf 5
+PRESMOOTHING 5 6
+PRESMOOTHING 6 7
+PRESMOOTHING 7 8
+PRESMOOTHING 8 inf
+
+POSTSMOOTHING -inf 1
+POSTSMOOTHING 1 2
+POSTSMOOTHING 2 3
+POSTSMOOTHING 3 inf
+{'zEBRALINE': [1]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 1]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 1]], 'PRESMOOTHING': [[8, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 1]], 'PRESMOOTHING': [[7, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 2]], 'PRESMOOTHING': [[7, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[7, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[7, inf]], 'ALPHA': [[15, 25]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 25]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 25]], 'BETA': [[85, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 25]], 'BETA': [[80, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 25], [30, 35]], 'BETA': [[80, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 25], [30, 35]], 'BETA': [[75, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 35]], 'BETA': [[75, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 40]], 'BETA': [[75, inf]]}
+{'zEBRALINE': [1], 'rELAXPARAMETER': [0], 'f': [0], 'v': [1], 'jACOBI': [0], 'cOLORGS': [0], 'lINE': [0], 'POSTSMOOTHING': [[-inf, 3]], 'PRESMOOTHING': [[6, inf]], 'ALPHA': [[15, 40]], 'BETA': [[70, inf]]}
+
+Mid
+Method, 	NUMBERITERATIONS-, 	TIMETOSOLUTION-
+all, 	7.0, 	133.14
+sway1, 	6.0, 	112.09
+xpln1, 	6.0, 	106.42
+sway2, 	5.0, 	75.66
+xpln2, 	6.0, 	110.35
+top, 	4.0, 	60.05
+
+Div
+Method, 	NUMBERITERATIONS-, 	TIMETOSOLUTION-
+all, 	8.53, 	96.94
+sway1, 	2.71, 	51.02
+xpln1, 	3.49, 	62.39
+sway2, 	1.94, 	13.69
+xpln2, 	3.49, 	55.77
+top, 	0.39, 	15.16
+
+Evals
+Method, 	 Count
+all, 	0
+sway1, 	10
+xpln1, 	10
+sway2, 	60
+xpln2, 	60
+top, 	239360
+------------------
+Equals
+------------------
+Method, 	NUMBERITERATIONS-, 	TIMETOSOLUTION-
+all to sway1, 	 ! , 	 ! 
+all to xpln1, 	 ! , 	 ! 
+all to sway2, 	 ! , 	 ! 
+all to xpln2, 	 ! , 	 ! 
+all to top, 	 ! , 	 ! 
+sway1 to xpln1, 	 = , 	 = 
+sway1 to sway2, 	 = , 	 ! 
+sway1 to xpln2, 	 ! , 	 = 
+sway1 to top, 	 ! , 	 ! 
+xpln1 to sway2, 	 = , 	 ! 
+xpln1 to xpln2, 	 = , 	 = 
+xpln1 to top, 	 ! , 	 ! 
+sway2 to xpln2, 	 = , 	 ! 
+sway2 to top, 	 ! , 	 ! 
+xpln2 to top, 	 ! , 	 ! 
+✅ pass:	 hpo
+#W ?k <class 'str'>
+#W ?v <class 'dict'>
+#W ?settings <class 'function'>
+#W ?cli <class 'function'>
+#W ?make_attempt <class 'function'>
+#W ?main <class 'function'>
+#W ?Seed <class 'int'>
+✅ Number of tests passing -> 1
+❌ Number of tests failing -> 0
