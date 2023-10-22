@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <%-include('../partials/bootstrap')%>
+
+        <!-- For datatables from datatables.net -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+
+</head>
+
+<body>
+    <%-include('../partials/navigation')%>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <br>
+                    <h1 class="display-4" style="text-align: center;">User List</h1>
+                    <hr>
+
+                    <table class="table table-hover" id="user_table">
+                        <thead>
+                            <tr class="table-warning">
+                                <th scope="col">ID</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Activate/Deactivate</th>
+                                <th scope="col">Delete User</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(var i=0; i<r.length;i++){%>
+                                <tr class="table-success">
+                                    <th scope="row">
+                                        <%=r[i].id%>
+                                    </th>
+                                    <td>
+
+                                        <%=r[i].email%>
+                                    </td>
+                                    <td>
+                                        <%=r[i].password%>
+                                    </td>
+                                    <td>
+                                        <%if(r[i].email!="admin@medilog.com"){%>
+                                            <%if(r[i].flag==1){%>
+                                                <a type="button" href='/admin/update-user/<%=r[i].id%>/0' class="btn btn-danger">Deactivate</a>
+                                                <%}else{%>
+                                                    <a type="button" href='/admin/update-user/<%=r[i].id%>/1' class="btn btn-success">Activate</a> %>
+                                                    <%}%>
+                                                        <%}%>
+                                    </td>
+                                    <td>
+                                        <%if(r[i].email!="admin@medilog.com"){%>
+                                            <a type="button" href='/admin/delete-user/<%=r[i].id%>' class="btn btn-danger">Delete</a>
+                                            <%}%>
+                                    </td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- For datatables from datatables.net -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <%-include('../partials/bootstrap-script')%>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#user_table').DataTable();
+                });
+            </script>
+
+</body>
+
+</html>

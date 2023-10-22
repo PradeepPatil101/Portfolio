@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLog
+
+    </title>
+    <%-include('../partials/bootstrap')%>
+        <!-- For datatables from datatables.net -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+</head>
+
+<body>
+    <%-include('../partials/navigation-user')%>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <br>
+                    <h1 class="display-3" style="text-align: center;">Receipts</h1>
+                    <hr>
+
+                    <a href="/user/new-receipt/0" class="btn btn-success btn btn-block">New Receipt</a>
+                    <hr>
+                    <table class="table" id="receipt_table">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Receipt Title</th>
+                                <th scope="col">Receipt Amount</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Last Update Date</th>
+                                <th scope="col">Paid or Unpaid</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(var i=0; i<r.length;i++){%>
+                                <tr>
+
+                                    <td>
+                                        <%=r[i].title%>
+                                    </td>
+                                    <td>
+                                        <%=r[i].body%>
+                                    </td>
+
+                                    <td>
+                                        <%
+                                let date1 = ("0" + r[i].date_created.getDate()).slice(-2);
+
+                                // current month
+                                let month1 = ("0" + (r[i].date_created.getMonth() + 1)).slice(-2);
+                                
+                                // current year
+                                let year1 = r[i].date_created.getFullYear();
+                                %>
+                                            <%=month1%>/
+                                                <%=date1%>/
+                                                    <%=year1%>
+
+                                    </td>
+                                    <td>
+                                        <%
+                                let date2 = ("0" + r[i].date_updated.getDate()).slice(-2);
+
+                                // current month
+                                let month2 = ("0" + (r[i].date_updated.getMonth() + 1)).slice(-2);
+                                
+                                // current year
+                                let year2 = r[i].date_updated.getFullYear();
+                                %>
+                                            <%=month2%>/
+                                                <%=date2%>/
+                                                    <%=year2%>
+
+                                    </td>
+                                    <td>
+                                        <%if(r[i].flag==1){%>
+                                            <a type="button" href='/user/update-receipt/<%=r[i].id%>/0' class="btn btn-danger">Unpaid</a>
+                                            <%}else{%>
+                                                <a type="button" href='/user/update-receipt/<%=r[i].id%>/1' class="btn btn-success">Paid</a> %>
+                                                <%}%>
+                                    </td>
+
+                                    <td>
+                                        <a type="button" href='./user/download-receipt/<%=r[i].id%>' class="btn btn-info"><i class="fa fa-download"></i>
+                                </a>
+                                        <a type="button" href='/user/edit-receipt/<%=r[i].id%>' class="btn btn-info"><i class="fa fa-edit"></i>
+                                </a>
+                                        <a type="button" href='/user/share-receipt/<%=r[i].id%>' class="btn btn-info"><i class="fa fa-share"></i>
+                                </a>
+                                        <a type="button" href='/user/delete-receipt/<%=r[i].id%>' class="btn btn-danger"><i class="fa fa-trash"></i>
+                                </a>
+                                    </td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        <!-- For datatables from datatables.net -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <%-include('../partials/bootstrap-script')%>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#receipt_table').DataTable();
+                });
+            </script>
+
+
+</body>
+
+</html>

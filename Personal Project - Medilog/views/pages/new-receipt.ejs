@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Receipt</title>
+    <%-include('../partials/bootstrap')%>
+</head>
+
+<body>
+    <%-include('../partials/navigation-user')%>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-6">
+                    <br>
+                    <h1 class="display-4" style="text-align: center;">New Receipt</h1>
+
+                    <hr>
+                    <div class="container">
+                        <form action='/user/new-receipt/<%=f%>' method='POST' enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="body">Amount</label>
+                                <input type="text" class="form-control" name="body" id="body" placeholder="Amount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="file">Attachments</label>
+                                <small>( File size should be less than 1 MB )</small>
+                                <input type="file" class="form-control" name="file" id="file" placeholder="File" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-include('../partials/bootstrap-script')%>
+
+</body>
+
+</html>

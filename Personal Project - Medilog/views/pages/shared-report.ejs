@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Report</title>
+    <%-include('../partials/bootstrap')%>
+</head>
+
+<body>
+    <%-include('../partials/navigation-shared')%>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <br>
+                    <h1 class="display-4" style="text-align: center;">Shared Report</h1>
+                    <hr>
+                    <div class="container">
+                        <form>
+                            <fieldset disabled="disabled">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" value="<%=r[0].title%>">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="body">Description</label>
+                                    <input type="text" class="form-control" name="body" id="body" value="<%=r[0].body%>">
+                                    <input type="text" class="form-control" hidden name="fileName" id="body" value="<%=r[0].file%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="file">Attachments</label>
+                                    <br>
+                                    <a target="_blank" href="/user/view-file/<%=r[0].file%>">Download File</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
