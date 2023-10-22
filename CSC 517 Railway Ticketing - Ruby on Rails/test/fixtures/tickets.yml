@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  passenger: one
+  train: one
+  confirmation_number: MyString
+
+two:
+  passenger: two
+  train: two
+  confirmation_number: MyString

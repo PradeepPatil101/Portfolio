@@ -1,0 +1,111 @@
+<div class="container ">
+
+  <% if notice %>
+    <div class="alert alert-success mt-5" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="mb-4">Trains</h1>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div class="mb-4">
+        <% if session[:admin] %>
+          <%= link_to 'New Train', new_train_path, class: "btn btn-outline-success " %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <form action="/trains" method="get" class="mb-4">
+    <div class="form-group">
+      <label for="departure_station">Filter by Departure Station:</label>
+      <input type="text" name="departure_station" id="departure_station" class="form-control" value="<%= params[:departure_station] %>" />
+    </div>
+    <div class="form-group">
+      <label for="termination_station">Filter by Termination Station:</label>
+      <input type="text" name="termination_station" id="termination_station" class="form-control" value="<%= params[:termination_station] %>" />
+    </div>
+    <div class="form-group">
+      <label for="rating">Filter by Rating:</label>
+      <select name="rating" id="rating" class="form-control">
+        <option value="" <%= params[:rating].blank? ? 'selected' : '' %>></option>
+        <% (1..5).each do |rating_value| %>
+          <option value="<%= rating_value %>" <%= (params[:rating].to_i == rating_value) ? 'selected' : '' %>><%= rating_value %>+</option>
+        <% end %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-2">Filter</button>
+    <button type="button" class="btn btn-outline-secondary mt-2" id="clearFilter">Clear Filter</button>
+  </form>
+
+  <table class="table table-bordered table-hover w-100">
+    <thead class="thead-light">
+    <tr>
+      <th>Train Number</th>
+      <th>Departure Station</th>
+      <th>Termination Station</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
+      <th>Arrival Date</th>
+      <th>Arrival Time</th>
+      <th>Ticket Price</th>
+      <th>Seats Left</th>
+      <th>Rating</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <% @trains.each do |train| %>
+
+        <tr>
+          <td><%= train.train_number %></td>
+          <td><%= train.departure_station %></td>
+          <td><%= train.termination_station %></td>
+          <td><%= format_date(train.departure_date) %></td>
+          <td><%= format_time(train.departure_time) %></td>
+          <td><%= format_date(train.arrival_date) %></td>
+          <td><%= format_time(train.arrival_time) %></td>
+          <td>$<%= train.ticket_price %></td>
+          <td><%= train.seats_left %></td>
+          <td><%= train.rating.to_f %></td>
+        </tr>
+        <% if session[:user_id] || session[:admin] %>
+        <tr>
+
+          <td colspan="10" class="action-links">
+            <div class="float-end">
+              <% if !session[:admin] %>
+                <%= link_to "Purchase Ticket", tickets_path(train_id: train.id), method: :post, class: 'btn btn-sm btn-outline-primary ml-2' %>
+                <%= link_to "Purchase for Another Passenger", purchase_for_another_passenger_path(train.id), method: :get, class: 'btn btn-sm btn-outline-primary ml-2' %>
+              <% end %>
+            <%= link_to 'Show', train, class: "btn btn-sm btn-outline-info" %>
+            <% if session[:admin] %>
+              <%= link_to 'Edit', edit_train_path(train), class: "btn btn-sm btn-outline-warning ml-2" %>
+              <%= link_to 'Destroy', train, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger ml-2" %>
+            <% end %>
+            </div>
+          </td>
+        </tr>
+    <% end %>
+
+    <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#clearFilter").click(function() {
+            $("form")[0].reset(); // Reset the form fields to their default values
+            window.location.href = '/trains'; // Redirect to the /trains path
+        });
+    });
+</script>
+

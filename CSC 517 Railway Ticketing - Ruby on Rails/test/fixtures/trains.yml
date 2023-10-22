@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train_number: 123
+  departure_station: "RDU"
+  termination_station: "NY"
+  departure_date: 2023-09-17
+  departure_time: 2023-09-17 21:46:01
+  arrival_date: 2023-09-17
+  arrival_time: 2023-09-17 21:46:01
+  ticket_price: 9.99
+  train_capacity: 100
+  seats_left: 50
+

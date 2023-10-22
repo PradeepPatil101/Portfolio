@@ -1,0 +1,116 @@
+<div class="container ">
+
+  <% if notice %>
+    <div class="alert alert-success mt-5" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="mb-4">Tickets</h1>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div class="mb-4">
+        <% if session[:admin] %>
+          <%= link_to 'New Ticket', new_ticket_path, class: "btn btn-outline-success mt-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+      <table class="table table-bordered table-hover w-100">
+        <thead class="thead-light">
+        <tr>
+          <th>Passenger Name</th>
+          <th>Train Number</th>
+          <th>Confirmation number</th>
+          <th>Departure Date</th>
+          <th>Arrival Date</th>
+          <th>Price</th>
+
+        </tr>
+        </thead>
+
+        <tbody >
+        <% @tickets.each do |ticket| %>
+          <tr >
+            <td><%= ticket.passenger.first_name %> <%= ticket.passenger.last_name %> </td>
+            <td><%= ticket.train_id %></td>
+            <td><%= ticket.confirmation_number %></td>
+            <% combined_datetime = ticket.train.departure_date.to_datetime + ticket.train.departure_time.seconds_since_midnight.seconds %>
+            <td><%= combined_datetime.strftime("%m-%d-%Y at %l:%M %p") %> EST</td>
+            <% combined_arrive_datetime = ticket.train.arrival_date.to_datetime + ticket.train.arrival_time.seconds_since_midnight.seconds %>
+            <td><%= combined_arrive_datetime.strftime("%m-%d-%Y at %l:%M %p") %> EST</td>
+            <td>$<%= ticket.price %></td>
+          </tr>
+          <tr>
+            <td colspan="10" class="action-links">
+              <div class="float-end">
+              <%= link_to 'Show', ticket, class: 'btn btn-outline-info btn-sm' %>
+            <% if session[:admin] %>
+              <%= link_to 'Edit', edit_ticket_path(ticket), class: 'btn btn-outline-warning btn-sm' %>
+              <%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+            <% end %>
+            <% unless Review.exists?(passenger_id: current_user.id, train_id: ticket.train_id) %>
+              <% if !session[:admin] %>
+              <%= link_to "Review Train", new_review_path(train_id: ticket.train_id), class: 'btn btn-outline-primary btn-sm' %>
+              <% end  %>
+            <% end %>
+              </div>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+  <% if !@purchased_for_others_tickets.empty? %>
+  <!-- New section for purchased tickets for others -->
+  <h4 class="mt-5">Purchased Tickets For Others:</h4>
+
+  <table class="table table-bordered table-hover w-100">
+    <thead class="thead-light">
+    <tr>
+      <th>Passenger Name</th>
+      <th>Train Number</th>
+      <th>Confirmation number</th>
+      <th>Departure Date</th>
+      <th>Arrival Date</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @purchased_for_others_tickets.each do |ticket| %>
+      <tr >
+        <td><%= ticket.passenger.first_name %> <%= ticket.passenger.last_name %> </td>
+        <td><%= ticket.train_id %></td>
+        <td><%= ticket.confirmation_number %></td>
+        <% combined_datetime = ticket.train.departure_date.to_datetime + ticket.train.departure_time.seconds_since_midnight.seconds %>
+        <td><%= combined_datetime.strftime("%m-%d-%Y at %l:%M %p") %> EST</td>
+        <% combined_arrive_datetime = ticket.train.arrival_date.to_datetime + ticket.train.arrival_time.seconds_since_midnight.seconds %>
+        <td><%= combined_arrive_datetime.strftime("%m-%d-%Y at %l:%M %p") %> EST</td>
+        <td>$<%= ticket.price %></td>
+      </tr>
+      <tr>
+        <td colspan="10" class="action-links">
+          <div class="float-end">
+            <%= link_to 'Show', ticket, class: 'btn btn-outline-info btn-sm' %>
+            <% if session[:admin] %>
+              <%= link_to 'Edit', edit_ticket_path(ticket), class: 'btn btn-outline-warning btn-sm' %>
+              <%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+            <% end %>
+            <% unless Review.exists?(passenger_id: current_user.id, train_id: ticket.train_id) %>
+              <% if !session[:admin] %>
+                <%= link_to "Review Train", new_review_path(train_id: ticket.train_id), class: 'btn btn-outline-primary btn-sm' %>
+              <% end  %>
+            <% end %>
+          </div>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+    <% end %>
+
+
+
+    </div>

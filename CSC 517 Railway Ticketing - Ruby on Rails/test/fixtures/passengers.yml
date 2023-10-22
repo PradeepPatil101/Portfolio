@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Pradeep
+  email: papatil@ncsu.edu
+  password: password
+  phone_number: 1234567890
+  address: 123 Apple Street
+  credit_card_info: 1234123412341234
+
+passenger_user:
+  name: Pradeep
+  email: papatil@gmail.com
+  password: password
+  phone_number: 1234567890
+  address: 123 Apple Street
+  credit_card_info: 1234123412341234
+
+

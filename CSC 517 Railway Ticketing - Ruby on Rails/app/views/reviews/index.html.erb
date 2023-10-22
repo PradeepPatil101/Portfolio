@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="mb-4">All Reviews</h1>
+  </div>
+  <div class="col-md-6 d-flex justify-content-end">
+    <div class="mb-4">
+      <% if session[:admin] %>
+        <%= link_to 'New Review', new_review_path, class: "btn btn-outline-success mt-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= form_tag(reviews_path, method: :get, class: "mb-4") do %>
+  <div class="mb-3">
+    <%= label_tag :first_name, "Filter by User's Name:", class: "form-label" %>
+    <%= text_field_tag :first_name, params[:first_name], class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= label_tag :train_number, "Filter by Train Number:", class: "form-label" %>
+    <%= text_field_tag :train_number, params[:train_number], class: "form-control" %>
+  </div>
+  <%= submit_tag "Filter", class: "btn btn-outline-primary" %>
+  <%= button_tag "Clear Filter", type: "button", class: "btn btn-outline-secondary", id: "clearFilter" %>
+<% end %>
+
+<% @reviews.each do |review| %>
+  <div class="card mb-3">
+    <div class="card-header"> <strong>Train Number: <%= review.train.train_number %></strong></div>
+
+    <div class="card-body">
+
+      <div class="form-group">
+        <label>Rating:</label>
+        <input type="text" class="form-control mt-2 mb-2" value="<%= review.rating %>" readonly>
+      </div>
+
+      <div class="form-group">
+        <label class="mt-2">Feedback:</label>
+        <input type="text" class="form-control mt-2 mb-2" readonly value="<%= review.feedback.truncate(100) %>">
+      </div>
+
+      <div class="form-group">
+        <label class="mt-2">Review by:</label>
+        <input type="text" class="form-control mt-2" value="<%= review.passenger.first_name %>" readonly>
+      </div>
+
+      <div class="float-end mt-2">
+        <%= link_to 'Show', review, class: "btn btn-outline-info" %>
+
+        <% if current_user == review.passenger || session[:admin] %>
+          <%= link_to 'Edit', edit_review_path(review), class: "btn btn-outline-warning" %>
+
+          <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+<% end %>
+
+<script>
+$(document).ready(function() {
+
+
+// Handle "Clear Filter" button click
+$("#clearFilter").click(function() {
+$("form")[0].reset(); // Reset the form fields to their default values
+window.location.href = '/reviews'; // Redirect to the /reviews path
+});
+
+
+});
+</script>

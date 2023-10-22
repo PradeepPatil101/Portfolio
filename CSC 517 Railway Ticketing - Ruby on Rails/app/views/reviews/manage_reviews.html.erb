@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="mb-4">My Reviews</h1>
+
+<%#= form_tag(manage_reviews_reviews_path, method: :get, class: "mb-4") do %>
+<!--  <div class="mb-3">-->
+    <%#= label_tag :name, "Filter by User Name:", class: "form-label" %>
+    <%#= text_field_tag :name, params[:name], class: "form-control" %>
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+    <%#= label_tag :train_number, "Filter by Train Number:", class: "form-label" %>
+    <%#= text_field_tag :train_number, params[:train_number], class: "form-control" %>
+<!--  </div>-->
+  <%#= submit_tag "Filter", class: "btn btn-outline-primary" %>
+<%# end %>
+
+
+
+<% if @unreviewed_trains.any? %>
+  <!-- To allow passengers to review trains they have been on and not reviewed yet -->
+  <div class="card mt-4">
+    <div class="card-header">
+      Trains you haven't reviewed yet:
+    </div>
+    <div class="card-body">
+
+        <% @unreviewed_trains.each do |train| %>
+            <div class="mb-4">
+            Train Number: <%= train.departure_station %> &emsp;
+            <%= link_to "Review", new_review_path(train_id: train.id), class: "btn btn-outline-primary" %>
+            </div>
+        <hr>
+        <% end %>
+
+    </div>
+  </div>
+
+<% end %>
+
+<% @reviews.each do |review| %>
+  <div class="card mb-3">
+    <div class="card-header">
+      Train Number: <%= review.train.train_number %>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Rating: <%= review.rating %></p>
+      <p class="card-text">Feedback: <%= review.feedback %></p>
+      <%= link_to 'Show', review, class: "btn btn-outline-info" %>
+      <%= link_to 'Edit', edit_review_path(review), class: "btn btn-outline-warning" %>
+      <%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+    </div>
+  </div>
+<% end %>

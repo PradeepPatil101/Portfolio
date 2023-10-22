@@ -1,0 +1,77 @@
+<h1>New Review</h1>
+
+<%= form_with(model: @review, local: true) do |form| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if current_user.is_a?(Admin) %>
+    <!-- Passenger Dropdown -->
+    <div class="form-group">
+      <%= form.label :passenger_id, "Passenger Name", class: "mb-2" %>
+      <%= form.collection_select :passenger_id, Passenger.all, :id, :full_name, { prompt: 'Select a passenger', disabled: false }, { class: "form-control", id: "passenger_select", required: true } %>
+    </div>
+
+    <!-- Train Dropdown -->
+    <div class="form-group">
+      <%= form.label :train_id, "Train Number", class: "mb-2 mt-2" %>
+      <%= form.collection_select :train_id, [], :id, :train_number, { prompt: 'Select a train', disabled: true }, { class: "form-control", id: "train_select", required: true } %>
+    </div>
+
+  <% else %>
+    <%= form.hidden_field :train_id, value: @train.id if @train %>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :rating, class: "mb-2 mt-2" %>
+    <%= form.select :rating, [1, 2, 3, 4, 5], { selected: 5}, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :feedback, class: "mb-2 mt-2" %>
+    <%= form.text_area :feedback, class: "form-control", id: "feedback_area", required: true %>
+  </div>
+
+  <%= form.submit "Submit Review", class: "btn btn-outline-primary mt-2 mb-2" %>
+<% end %>
+
+<!-- Add JavaScript/jQuery code to manage the AJAX call and update the form dynamically -->
+<script>
+    $(document).on('change', '#passenger_select', function() {
+        var passengerId = $(this).val();
+        $.ajax({
+            url: `/reviews/eligible_trains?passenger_id=${passengerId}`,
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                $('#train_select').empty();
+                if (data.length === 0) {
+                    $('#train_select').append('<option>No trains available</option>').attr('disabled', true);
+                    $('#feedback_area').val('Unable to leave a review for this passenger as they have not purchased a ticket for this train or already reviewed all available trains.');
+
+                    // Disable the submit button
+                    $('input[type="submit"]').attr('disabled', true);
+                } else {
+                    $('#train_select').append('<option>Select a train</option>');
+                    data.forEach(function(train) {
+                        $('#train_select').append(`<option value="${train.id}">${train.train_number}</option>`);
+                    });
+                    $('#train_select').attr('disabled', false);
+                    $('#feedback_area').text('');
+
+                    // Enable the submit button
+                    $('input[type="submit"]').attr('disabled', false);
+                }
+            }
+        });
+    });
+
+</script>
+

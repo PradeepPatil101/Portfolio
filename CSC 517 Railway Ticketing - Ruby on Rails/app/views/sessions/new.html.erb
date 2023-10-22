@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <!-- Alert Display -->
+      <% if alert %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+      <!-- Login Form -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Login</h5>
+          <%= form_tag sessions_path do |form| %>
+
+            <div class="mb-3">
+              <%= label_tag :email_address, "Email Address", class: 'form-label' %>
+              <%= text_field_tag :email_address, nil, class: 'form-control' %>
+            </div>
+
+            <div class="mb-3">
+              <%= label_tag :password, "Password", class: 'form-label' %>
+              <%= password_field_tag :password, nil, class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+              <%= submit_tag "Login", class: 'btn btn-primary' %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

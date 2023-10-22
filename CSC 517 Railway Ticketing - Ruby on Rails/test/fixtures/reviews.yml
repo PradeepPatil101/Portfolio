@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  passenger: one
+  train: one
+  rating: 4
+  feedback: "Good Service"

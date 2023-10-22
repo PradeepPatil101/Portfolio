@@ -1,0 +1,112 @@
+<div class="card">
+  <div class="card-header">
+    Editing Passenger
+  </div>
+  <div class="card-body">
+    <%= render 'form', passenger: @passenger %>
+
+    <div class="mt-3 d-flex justify-content-between">
+      <%= link_to 'Back', passengers_path, class: "btn btn-outline-secondary" %>
+
+      <% if session[:user_id] == @passenger.id || session[:admin] %>
+        <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    $(document).ready(function() {
+
+
+        //Makes the password confirmation field required if editing profile
+        const $passwordField = $("#password_field");
+        const $passwordConfirmationField = $("#password_confirmation_field");
+
+        $passwordField.on("input", function() {
+            $passwordConfirmationField.prop("required", $passwordField.val() !== "");
+        });
+
+        // verifies the form before submission
+        $('#passenger_form').on('submit', function(event) {
+
+
+            let errors = [];
+
+            // Clear all previous error messages
+            $(".text-danger").text("");
+
+            const password = $('#password_field').val();
+            const passwordConfirmation = $('#password_confirmation_field').val();
+
+            // Only check if either field has a value
+            if ((password || passwordConfirmation) && password !== passwordConfirmation) {
+                errors.push('Passwords do not match!');
+                $('#password_confirmation_error').text('Passwords do not match!');
+            }
+
+            // Check password length only if the password field has content
+            if (password && (password.length < 6 || password.length > 20)) {
+                errors.push('Password should be between 6 and 20 characters long.');
+                $('#password_error').text('Password should be between 6 and 20 characters long.');
+            }
+
+            const firstName = $('#passenger_first_name').val();
+            const lastName = $('#passenger_last_name').val();
+
+            if (firstName.length < 1) {
+                errors.push('First name should be at least 1 character long.');
+                $('#first_name_error').text('First name should be at least 1 character long.');
+            }
+
+            if (lastName.length < 1) {
+                errors.push('Last name should be at least 1 character long.');
+                $('#last_name_error').text('Last name should be at least 1 character long.');
+            }
+
+            const email = $('#passenger_email').val();
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                errors.push('Invalid email format.');
+                $('#passenger_email_error').text('Invalid email format.');
+            }
+
+
+            if (errors.length > 0) {
+                console.log('Errors detected, preventing form submission.');
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        // Clear the password error message once user starts typing to correct it
+        $('#password_confirmation_field').on('input', function() {
+            $('#password_confirmation_error').text('');
+        });
+
+        $('#phone_number').on('input', function() {
+            let value = $(this).val().replace(/\D/g, '');  // Remove all non-numeric characters
+            if (value.length > 3) {
+                value = value.substring(0, 3) + '-' + value.substring(3);
+            }
+            if (value.length > 7) {
+                value = value.substring(0, 7) + '-' + value.substring(7, 11);
+            }
+            $(this).val(value.substring(0, 12));  // Limit to 12 characters
+        });
+
+        $('#credit_card_info').on('input', function() {
+            let value = $(this).val().replace(/\D/g, ''); // Remove all non-numeric characters
+            for (let i = 4; i < value.length; i += 5) {
+                value = value.substring(0, i) + '-' + value.substring(i);
+            }
+            $(this).val(value.substring(0, 19));  // Limit to 19 characters
+
+            // Make the credit card field required if it has content
+            $('#credit_card_info').prop("required", value.length > 0);
+        });
+    });
+
+
+</script>

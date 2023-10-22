@@ -1,0 +1,97 @@
+<div >
+  <div class="row justify-content-center">
+    <div class="col-sm-8 col-md-4">
+
+<%= form_with(model: train, local: true, html: { class: 'mt-4' }) do |form| %>
+
+        <% if train.errors.any? %>
+          <div class="alert alert-danger">
+            <h2><%= pluralize(train.errors.count, "error") %> prohibited this train from being saved:</h2>
+            <ul>
+              <% train.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+
+          <div class="form-group ">
+            <%= form.label :train_number %>
+            <%= form.text_field :train_number, class: 'form-control' %>
+          </div>
+
+          <div class="form-group mt-2">
+            <%= form.label :departure_station %>
+            <%= form.text_field :departure_station, class: 'form-control' %>
+          </div>
+
+
+
+          <div class="form-group mt-2">
+            <%= form.label :termination_station %>
+            <%= form.text_field :termination_station, class: 'form-control' %>
+          </div>
+
+
+
+          <div class="form-group mt-2">
+            <%= form.label :departure_date, 'Departure Date' %>
+            <div class="date_select">
+              <%= form.date_select :departure_date, { order: [:day, :month, :year], use_short_month: true, start_year: Date.today.year, end_year: Date.today.year + 5 }, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group mt-2">
+            <%= form.label :departure_time, 'Departure Time' %>
+            <div class="time_select">
+              <%= form.time_select :departure_time, { minute_step: 5 }, class: 'form-control' %>
+            </div>
+          </div>
+
+
+
+          <div class="form-group mt-2">
+            <%= form.label :arrival_date, 'Arrival Date' %>
+            <div class="date_select">
+              <%= form.date_select :arrival_date, { order: [:day, :month, :year], use_short_month: true, start_year: Date.today.year, end_year: Date.today.year + 5 }, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group mt-2">
+            <%= form.label :arrival_time, 'Arrival Time' %>
+            <div class="time_select">
+              <%= form.time_select :arrival_time, { minute_step: 5 }, class: 'form-control' %>
+            </div>
+          </div>
+
+
+
+          <div class="form-group mt-2">
+            <%= form.label :ticket_price %>
+            <%= form.text_field :ticket_price, class: 'form-control' %>
+          </div>
+
+          <div class="form-group mt-2">
+            <%= form.label :train_capacity %>
+            <%= form.number_field :train_capacity, class: 'form-control' %>
+          </div>
+
+
+
+          <div class="form-group mt-2">
+            <%= form.label :seats_left %>
+            <%= form.number_field :seats_left, class: 'form-control' %>
+          </div>
+
+
+        <div class="form-group">
+          <%= form.submit 'Save Train', class: 'btn btn-outline-primary mt-4 mb-4' %>
+        </div>
+
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+

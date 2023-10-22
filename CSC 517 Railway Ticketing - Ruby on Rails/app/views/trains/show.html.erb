@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-header">
+    Train Details
+  </div>
+
+  <div class="card-body">
+    <% if notice %>
+      <div class="alert alert-info" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-md-6">
+        <div class="form-group">
+          <label><strong>Train number:</strong></label>
+          <div class="form-control mt-2"><%= @train.train_number %></div>
+        </div>
+
+        <div class="form-group mt-2">
+          <label><strong>Departure station:</strong></label>
+          <div class="form-control mt-2"><%= @train.departure_station %></div>
+        </div>
+
+        <div class="form-group mt-2">
+          <label><strong>Termination station:</strong></label>
+          <div class="form-control mt-2"><%= @train.termination_station %></div>
+        </div>
+
+      <div class="form-group mt-2">
+        <label><strong>Departure date:</strong></label>
+        <div class="form-control mt-2" ><%= format_date(@train.departure_date) %> </div>
+      </div>
+
+      <div class="card-text mt-2">
+        <label><strong>Departure time:</strong></label>
+        <div class="form-control mt-2"><%= format_time(@train.departure_time) %></div>
+      </div>
+
+      <div class="card-text mt-2">
+        <label><strong>Arrival date:</strong></label>
+        <div class="form-control mt-2"><%= format_date(@train.arrival_date) %></div>
+      </div>
+
+      <div class="card-text mt-2">
+        <label><strong>Arrival time:</strong></label>
+        <div class="form-control mt-2"><%= format_time(@train.arrival_time) %></div>
+      </div>
+
+      <div class="card-text">
+        <label><strong>Ticket price:</strong></label>
+        <div class="form-control mt-2"><%= @train.ticket_price %></div>
+      </div>
+
+      <div class="card-text mt-2">
+        <label><strong>Train capacity:</strong></label>
+        <div class="form-control mt-2"><%= @train.train_capacity %></div>
+      </div>
+
+      <div class="card-text mt-2">
+        <label><strong>Seats left:</strong></label>
+        <div class="form-control mt-2 mb-2"><%= @train.seats_left %></div>
+      </div>
+
+        <% if session[:user_id] && !session[:admin] %>
+          <div class="d-flex flex-wrap">
+            <%= button_to "Purchase Ticket", tickets_path(train_id: @train.id), method: :post, class: 'btn btn-primary mb-2 mr-2' %> &emsp;
+            <%= button_to "Purchase for Another Passenger", purchase_for_another_passenger_path(@train.id), method: :get, class: 'btn btn-outline-primary mb-2' %>
+          </div>
+        <% end %>
+
+
+
+      </div>
+      </div>
+    <div>
+      <% if session[:admin] %>
+        <%= link_to 'Edit', edit_train_path(@train), class: 'btn btn-outline-warning' %>
+      <% end %>
+      <%= link_to 'Back', trains_path, class: 'btn btn-outline-info ml-2' %>
+    </div>
+    </div>
+  </div>
+
+

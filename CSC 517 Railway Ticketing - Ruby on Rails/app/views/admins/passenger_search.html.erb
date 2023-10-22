@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      Search by Train Numbers in the Database
+    </div>
+    <div class="card-body">
+      <%= form_with(url: search_results_path, method: :post, local: true, class: "mb-4") do |form| %>
+        <div class="input-group mb-3">
+          <%= form.collection_select :train_id, Train.all, :id, :train_number, { prompt: "Select a Train" }, { class: "form-control" } %>
+          <div class="input-group-append">
+            <%= form.submit "Search", class: "btn btn-outline-primary" %>
+          </div>
+        </div>
+      <% end %>
+
+
+      <% if @tickets && @tickets.any? %>
+
+        <table class="table table-bordered table-hover mt-2">
+          <thead class="thead-light">
+          <tr>
+            <th>Passenger Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @tickets.each do |ticket| %>
+            <tr>
+              <td><%= ticket.passenger.full_name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% elsif @tickets && @tickets.empty? %>
+        <p class="text-danger mt-3">No passengers found for this train number.</p>
+      <% end %>
+    </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.train-select').select2({
+      placeholder: "Select a train",
+      allowClear: true
+    });
+  });
+</script>
