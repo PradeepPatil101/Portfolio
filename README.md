@@ -1,2 +1,3 @@
 # Portfolio
-A repo link for all my projects
+This is a portfolio of some projects that I worked on as a student.
+
